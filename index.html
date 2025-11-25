@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Pontos - Vôlei</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>⚡ PLACAR DE VÔLEI ⚡</h1>
+            <button class="reset-btn" onclick="resetGame()">🔄 Reiniciar Jogo</button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Team 1 (Blue) -->
+            <div class="team team-1">
+                <div class="team-header">
+                    <input type="text" class="team-name-input" id="team1Name" value="Equipe 1" onchange="updateTeamName(1)">
+                </div>
+
+                <div class="score-display">
+                    <div class="current-score" id="team1Score">0</div>
+                </div>
+
+                <div class="sets-display">
+                    <div class="set-box">
+                        <span class="set-label">Set 1</span>
+                        <span class="set-score" id="team1Set1">0</span>
+                    </div>
+                    <div class="set-box">
+                        <span class="set-label">Set 2</span>
+                        <span class="set-score" id="team1Set2">0</span>
+                    </div>
+                    <div class="set-box">
+                        <span class="set-label">Set 3</span>
+                        <span class="set-score" id="team1Set3">0</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-add" onclick="addPoint(1)">➕ Ponto</button>
+                    <button class="btn btn-remove" onclick="removePoint(1)">➖ Desfazer</button>
+                </div>
+
+                <div class="sets-won">
+                    Sets Vencidos: <span id="team1SetsWon">0</span>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Team 2 (Red) -->
+            <div class="team team-2">
+                <div class="team-header">
+                    <input type="text" class="team-name-input" id="team2Name" value="Equipe 2" onchange="updateTeamName(2)">
+                </div>
+
+                <div class="score-display">
+                    <div class="current-score" id="team2Score">0</div>
+                </div>
+
+                <div class="sets-display">
+                    <div class="set-box">
+                        <span class="set-label">Set 1</span>
+                        <span class="set-score" id="team2Set1">0</span>
+                    </div>
+                    <div class="set-box">
+                        <span class="set-label">Set 2</span>
+                        <span class="set-score" id="team2Set2">0</span>
+                    </div>
+                    <div class="set-box">
+                        <span class="set-label">Set 3</span>
+                        <span class="set-score" id="team2Set3">0</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-add" onclick="addPoint(2)">➕ Ponto</button>
+                    <button class="btn btn-remove" onclick="removePoint(2)">➖ Desfazer</button>
+                </div>
+
+                <div class="sets-won">
+                    Sets Vencidos: <span id="team2SetsWon">0</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Game Status -->
+        <div class="game-status" id="gameStatus">
+            <p id="statusText">Set 1 em andamento...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
